@@ -38,4 +38,12 @@ newMethod(){
 <event-component onNewMethod={() => this.newMethod()}></event-component>
 ```
 
-The first method works fine, however the new method does not work. 
+The first method works fine, however the new method does not work.
+
+If the second method is changed to the following then it works:
+```
+@Listen('newMethod')
+newMethod(){
+    this.newCount = this.newCount + 1;
+}
+```
