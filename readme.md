@@ -20,6 +20,8 @@ npm install
 npm start
 ```
 
+## N.B: Sometimes the repo will show an error in a browser, wait for the build to finish and refresh the page.
+
 There are two buttons in the `event-component` which each trigger an event. The listener component counts the clicks on the two buttons using two different listener methods. The first method, named the old method:
 ```
 @Listen('oldMethod')
