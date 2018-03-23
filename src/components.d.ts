@@ -22,31 +22,62 @@ declare global {
 
 
 import {
-  MyComponent as MyComponent
-} from './components/my-component/my-component';
+  EventComponent as EventComponent
+} from './components/event-component/event-component';
 
 declare global {
-  interface HTMLMyComponentElement extends MyComponent, HTMLStencilElement {
+  interface HTMLEventComponentElement extends EventComponent, HTMLStencilElement {
   }
-  var HTMLMyComponentElement: {
-    prototype: HTMLMyComponentElement;
-    new (): HTMLMyComponentElement;
+  var HTMLEventComponentElement: {
+    prototype: HTMLEventComponentElement;
+    new (): HTMLEventComponentElement;
   };
   interface HTMLElementTagNameMap {
-    'my-component': HTMLMyComponentElement;
+    'event-component': HTMLEventComponentElement;
   }
   interface ElementTagNameMap {
-    'my-component': HTMLMyComponentElement;
+    'event-component': HTMLEventComponentElement;
   }
   namespace JSX {
     interface IntrinsicElements {
-      'my-component': JSXElements.MyComponentAttributes;
+      'event-component': JSXElements.EventComponentAttributes;
     }
   }
   namespace JSXElements {
-    export interface MyComponentAttributes extends HTMLAttributes {
-      'first'?: string;
-      'last'?: string;
+    export interface EventComponentAttributes extends HTMLAttributes {
+      
+      'onNewMethod'?: (event: CustomEvent<string>) => void;
+      'onOldMethod'?: (event: CustomEvent<string>) => void;
+    }
+  }
+}
+
+
+import {
+  listenerComponent as ListenerComponent
+} from './components/listener-component/listener-component';
+
+declare global {
+  interface HTMLListenerComponentElement extends ListenerComponent, HTMLStencilElement {
+  }
+  var HTMLListenerComponentElement: {
+    prototype: HTMLListenerComponentElement;
+    new (): HTMLListenerComponentElement;
+  };
+  interface HTMLElementTagNameMap {
+    'listener-component': HTMLListenerComponentElement;
+  }
+  interface ElementTagNameMap {
+    'listener-component': HTMLListenerComponentElement;
+  }
+  namespace JSX {
+    interface IntrinsicElements {
+      'listener-component': JSXElements.ListenerComponentAttributes;
+    }
+  }
+  namespace JSXElements {
+    export interface ListenerComponentAttributes extends HTMLAttributes {
+      
       
     }
   }

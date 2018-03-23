@@ -1,6 +1,6 @@
 exports.config = {
   namespace: 'mycomponent',
-  outputTargets:[{type: 'dist'}]
+  outputTargets:[{type: 'dist'}, {type: 'www'}]
 };
 
 exports.devServer = {
